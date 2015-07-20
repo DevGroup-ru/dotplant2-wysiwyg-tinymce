@@ -12,7 +12,6 @@ class m150720_094657_initial extends Migration
             'class_name' => 'dosamigos\tinymce\TinyMce',
             'params' => \yii\helpers\Json::encode([
                 'options' => ['rows' => 6],
-                'language' => Yii::$app->language,
                 'clientOptions' => [
                     'plugins' => [
                         "advlist autolink lists link charmap print preview anchor",
