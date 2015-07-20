@@ -1,0 +1,14 @@
+{
+    "name": "dotplant/wysiwyg-tinymce",
+    "description": "TinyMCE WYSIWYG widget for DotPlant2 backend",
+    "type": "dotplant2-extension",
+    "minimum-stability": "dev",
+    "require": {
+        "2amigos/yii2-tinymce-widget" : "~1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "DotPlant\\TinyMCE\\": "src/"
+        }
+    }
+}
