@@ -13,12 +13,19 @@ class m150720_094657_initial extends Migration
             'params' => \yii\helpers\Json::encode([
                 'options' => ['rows' => 6],
                 'clientOptions' => [
+                    'menubar' => false,
+                    'toolbar_items_size' => 'small',
                     'plugins' => [
-                        "advlist autolink lists link charmap print preview anchor",
-                        "searchreplace visualblocks code fullscreen",
-                        "insertdatetime media table contextmenu paste"
+                        "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+                        "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                        "table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker textpattern",
+                        "imagetools"
+
                     ],
-                    'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+                    'toolbar1' => "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
+                    'toolbar2' => "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | insertdatetime preview | forecolor backcolor",
+                    'toolbar3' => "table | hr removeformat | subscript superscript | charmap | fullscreen | ltr rtl | spellchecker | nonbreaking template pagebreak",
+
                 ],
             ]),
             'configuration_model' => 'DotPlant\TinyMCE\components\ConfigurationModel',
