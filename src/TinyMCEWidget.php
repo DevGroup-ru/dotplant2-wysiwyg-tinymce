@@ -1,5 +1,11 @@
 <?php
 
+namespace DotPlant\TinyMCE;
+
+use Yii;
+use yii\helpers\Json;
+use yii\helpers\Url;
+
 class TinyMCEWidget extends \dosamigos\tinymce\TinyMce
 {
     public function run()
@@ -8,7 +14,7 @@ class TinyMCEWidget extends \dosamigos\tinymce\TinyMce
         if ($module) {
             // elfinder exists!
             \mihaildev\elfinder\Assets::noConflict($this->getView());
-            $elfinderUrl = yii\helpers\Json::encode(yii\helpers\Url::to(['/elfinder/frame']));
+            $elfinderUrl = Json::encode(Url::to(['/elfinder/frame']));
             $this->clientOptions['file_browser_callback'] = new \yii\web\JsExpression(
                 <<<JS
 function (field_name, url, type, win) {
@@ -20,7 +26,11 @@ function (field_name, url, type, win) {
     resizable: 'yes'
   }, {
     setUrl: function (url) {
-      win.document.getElementById(field_name).value = url;
+
+      win.document.getElementById(field_name).value = url.url;
+      var evt = document.createEvent("HTMLEvents");
+      evt.initEvent("change", false, true);
+      win.document.getElementById(field_name).dispatchEvent(evt);
     }
   });
   return false;

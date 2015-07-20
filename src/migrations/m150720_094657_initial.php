@@ -9,9 +9,9 @@ class m150720_094657_initial extends Migration
     {
         $this->insert('{{%wysiwyg}}', [
             'name' => 'TinyMCE',
-            'class_name' => 'dosamigos\tinymce\TinyMce',
+            'class_name' => 'DotPlant\TinyMCE\TinyMCEWidget',
             'params' => \yii\helpers\Json::encode([
-                'options' => ['rows' => 6],
+                'options' => ['rows' => 22],
                 'clientOptions' => [
                     'menubar' => false,
                     'toolbar_items_size' => 'small',
@@ -25,7 +25,8 @@ class m150720_094657_initial extends Migration
                     'toolbar1' => "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
                     'toolbar2' => "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | insertdatetime preview | forecolor backcolor",
                     'toolbar3' => "table | hr removeformat | subscript superscript | charmap | fullscreen | ltr rtl | spellchecker | nonbreaking template pagebreak",
-
+                    'relative_urls' => false,
+                    'remove_script_host' => true,
                 ],
             ]),
             'configuration_model' => 'DotPlant\TinyMCE\components\ConfigurationModel',
