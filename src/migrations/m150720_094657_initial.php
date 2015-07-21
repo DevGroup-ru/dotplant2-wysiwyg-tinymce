@@ -27,6 +27,8 @@ class m150720_094657_initial extends Migration
                     'toolbar3' => "table | hr removeformat | subscript superscript | charmap | fullscreen | ltr rtl | spellchecker | nonbreaking template pagebreak",
                     'relative_urls' => false,
                     'remove_script_host' => true,
+                    'image_advtab' => true,
+                    'image_title' => true
                 ],
             ]),
             'configuration_model' => 'DotPlant\TinyMCE\components\ConfigurationModel',
